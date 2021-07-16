@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
     config.vm.network "forwarded_port", guest: 22, host: 25652, host_ip: "0.0.0.0", auto_correct: true
 
     ub1404.vm.provider "virtualbox" do |v|
-      v.name = "Metasploitable3-ub1404"
+      v.name = "Metasploitable3-ub0000"
       v.memory = 2048
     end
   end
