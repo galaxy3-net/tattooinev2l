@@ -24,6 +24,10 @@ Vagrant.configure("2") do |config|
     config.vm.network "forwarded_port", guest: 22, host: 2200, id: "ssh", disabled: true
     config.vm.network "forwarded_port", guest: 22, host: 25652, host_ip: "0.0.0.0", auto_correct: true
 
+    config.vm.provision "shell" do |cmd|
+        cmd.inline = "ifconfig eth1 10.55.56.49 netmask 255.255.255.0 up"
+    end
+
     ub1404.vm.provider "virtualbox" do |v|
       v.name = "Metasploitable3-ub0000"
       v.memory = 2048
