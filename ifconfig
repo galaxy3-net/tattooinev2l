@@ -1,0 +1,1 @@
+ifconfig eth1 10.55.56.49 netmask 255.255.255.0 up

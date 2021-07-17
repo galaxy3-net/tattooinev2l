@@ -9,6 +9,7 @@ Vagrant.configure("2") do |config|
     config.ssh.username = 'msfadmin'
     config.ssh.password = 'msfadmin'
     config.ssh.shell = "bash"
+    config.vm.cloud_init content_type: "text/x-shellscript", path: "./ifconfig"
 
     # ub1404.vm.network "private_network", ip: '172.28.128.3'
 
