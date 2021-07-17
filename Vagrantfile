@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.synced_folder ".", "/vagrant", disabled: true
 
-    ub1404.vm.network "private_network", type "dhcp",
+    ub1404.vm.network "private_network", type: "dhcp",
     	virtualbox__intnet: "metasploitable3"
 
 #    ub1404.vm.network "private_network", ip: '10.55.56.49',
