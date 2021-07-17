@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
     #
     config.ssh.username = 'msfadmin'
     config.ssh.password = 'msfadmin'
-    config.ssh.shell = "tcsh"
+    config.ssh.shell = "bash"
 
     # ub1404.vm.network "private_network", ip: '172.28.128.3'
 
