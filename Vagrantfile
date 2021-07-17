@@ -2,9 +2,9 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.synced_folder '.', '/vagrant', disabled: true
+  config.vm.synced_folder './', '/vagrant', disabled: true
   config.vm.define "ub1404" do |ub1404|
-    ub1404.vm.box = "galaxy3/metasploitable2"
+    config.vm.box = "galaxy3/metasploitable2"
     #
     config.ssh.username = 'msfadmin'
     config.ssh.password = 'msfadmin'
@@ -13,10 +13,10 @@ Vagrant.configure("2") do |config|
 
     # ub1404.vm.network "private_network", ip: '172.28.128.3'
 
-    ub1404.vbguest.auto_update = false
-    ub1404.ssh.insert_key = false
-    ub1404.ssh.connect_timeout = 20
-    ub1404.vm.boot_timeout = 120
+    config.vbguest.auto_update = false
+    config.ssh.insert_key = false
+    config.ssh.connect_timeout = 20
+    config.vm.boot_timeout = 120
 
   config.vm.synced_folder "./", "/vagrant", disabled: true
     config.vm.allow_fstab_modification = false
@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
 #        auto_config: false,
 #    	virtualbox__intnet: "metasploitable3"
 
-    ub1404.vm.network "private_network", ip: '10.55.56.49',
+    config.vm.network "private_network", ip: '10.55.56.49',
         auto_config: false,
     	virtualbox__intnet: "metasploitable3"
 
@@ -44,7 +44,7 @@ Vagrant.configure("2") do |config|
         cmd.inline = "ifconfig eth1 10.55.56.49 netmask 255.255.255.0 up"
     end
 
-    ub1404.vm.provider "virtualbox" do |v|
+    config.vm.provider "virtualbox" do |v|
       v.name = "Metasploitable3-ub0000"
       v.memory = 2048
       v.gui = false
