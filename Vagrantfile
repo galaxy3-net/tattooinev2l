@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
 #    	virtualbox__intnet: "metasploitable3"
 
     ub1404.vm.network :private_network,
-                   :libvirt__network_name => 'metasploitable3',
+                   :libvirt__network_name => 'metasploitable3'
 #                   :ip => '192.168.1.10',
 #                   :libvirt__netmask => '255.255.255.0',
 #                   :libvirt__network_name => 'mynetwork',
