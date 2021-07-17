@@ -17,7 +17,8 @@ Vagrant.configure("2") do |config|
     ub1404.ssh.connect_timeout = 20
     ub1404.vm.boot_timeout = 120
 
-  config.vm.synced_folder ".", "/vagrant", disabled: true
+  config.vm.synced_folder "./", "/vagrant", disabled: true
+    config.vm.allow_fstab_modification = false
 
 #    ub1404.vm.network "private_network", type: "dhcp",
 #        auto_config: false,
