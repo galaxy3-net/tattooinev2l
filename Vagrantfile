@@ -18,8 +18,15 @@ Vagrant.configure("2") do |config|
 
   config.vm.synced_folder ".", "/vagrant", disabled: true
 
-    ub1404.vm.network "private_network", ip: '10.55.56.49',
-    	virtualbox__intnet: "metasploitable3"
+#    ub1404.vm.network "private_network", ip: '10.55.56.49',
+#    	virtualbox__intnet: "metasploitable3"
+
+    vm1.vm.network :private_network,
+                   :libvirt__network_name => 'metasploitable3',
+#                   :ip => '192.168.1.10',
+#                   :libvirt__netmask => '255.255.255.0',
+#                   :libvirt__network_name => 'mynetwork',
+#                   :libvirt__forward_mode => 'none'
 
     config.vm.network "forwarded_port", guest: 22, host: 2200, id: "ssh", disabled: true
     config.vm.network "forwarded_port", guest: 22, host: 25652, host_ip: "0.0.0.0", auto_correct: true
