@@ -44,6 +44,8 @@ Vagrant.configure("2") do |config|
     ub1404.vm.provider "virtualbox" do |v|
       v.name = "Metasploitable3-ub0000"
       v.memory = 2048
+      v.gui = false
+      v.check_guest_additions = false
     end
   end
 
