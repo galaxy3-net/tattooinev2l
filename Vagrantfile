@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
 #        auto_config: false,
 #    	virtualbox__intnet: "metasploitable3"
 
-    config.vm.network "private_network", type: "dhcp",
+    ub1404.vm.network "private_network", type: "dhcp",
         auto_config: false,
     	virtualbox__intnet: "metasploitable3"
 
