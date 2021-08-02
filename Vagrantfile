@@ -26,9 +26,11 @@ Vagrant.configure("2") do |config|
 #        auto_config: false,
 #    	virtualbox__intnet: "metasploitable3"
 
-    config.vm.network "private_network", ip: '10.55.56.49',
-        auto_config: false,
-    	virtualbox__intnet: "metasploitable3"
+    config.vm.network "private_network", type: dhcp
+
+#    config.vm.network "private_network", ip: '10.55.56.49',
+#        auto_config: false,
+#    	virtualbox__intnet: "metasploitable3"
 
 #    ub1404.vm.network :private_network,
 #                   :libvirt__network_name => 'metasploitable3'
