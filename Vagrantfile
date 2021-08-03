@@ -45,9 +45,13 @@ Vagrant.configure("2") do |config|
     config.vm.network "forwarded_port", guest: 22, host: 25652, host_ip: "0.0.0.0", auto_correct: true
     config.vbguest.auto_update = false
 
-    config.vm.provision "shell" do |cmd|
-        cmd.inline = "ifconfig eth1 10.55.56.49 netmask 255.255.255.0 up"
-    end
+    config.vm.network "private_network", type: "dhcp",
+        mac: "080027aaabab",
+        virtualbox__intnet: "metasploitable3"
+
+#    config.vm.provision "shell" do |cmd|
+#        cmd.inline = "ifconfig eth1 10.55.56.49 netmask 255.255.255.0 up"
+#    end
 
     config.vm.provider "virtualbox" do |v|
       v.name = "Metasploitable3-ub0000"
