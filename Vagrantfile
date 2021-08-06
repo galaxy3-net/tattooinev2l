@@ -46,7 +46,7 @@ Vagrant.configure("2") do |config|
     config.vbguest.auto_update = false
 
     config.vm.network "private_network", type: "dhcp",
-        mac: "080027aaabab",
+        mac: "080027373832",
         virtualbox__intnet: "metasploitable3"
 
 #    config.vm.provision "shell" do |cmd|
